@@ -45,6 +45,9 @@ func setupViews() {
 	if err != nil {
 		log.Printf("could not open view content directory: %v", err)
 	}
+
+	registerFunctions(layout)
+
 	for _, fi := range viewFIs {
 		f, err := os.Open(path.Join(viewRoot, "content", fi.Name()))
 		if err != nil {

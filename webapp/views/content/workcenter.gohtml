@@ -15,13 +15,13 @@
 		<span class="label">Escalation level</span>
 		<span id="escalation-level" class="value">{{.EscalationLevelDescription}}</span>
 		<span class="label">Time at this status</span>
-		<span id="time-at-status" class="value">{{.TimeAtStatus}}</span>
+		<span id="time-at-status" class="value">{{.TimeAtStatus | durationToHHMMSS}}</span>
 		<span class="label">Time till next escalation</span>
 		<span id="time-till-escalation" class="value">
 			{{- if eq .Status 0 -}}
 				N/A
 			{{- else -}}
-				{{.TimeTillEscalation}}
+				{{.TimeTillEscalation | durationToHHMMSS}}
 			{{- end -}}
 		</span>
 	</div>
