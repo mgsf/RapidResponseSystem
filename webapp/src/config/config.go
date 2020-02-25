@@ -5,14 +5,20 @@ import (
 	"os"
 )
 
+const (
+	// EnvironmentDev is the value of "Environment" that will be set when the application is running in development mode.
+	EnvironmentDev = "dev"
+)
+
 var (
 	c Config
 )
 
 // Config holds the current runtime configuration options.
 type Config struct {
-	StaticRoot string
-	ViewRoot   string
+	Environment string
+	StaticRoot  string
+	ViewRoot    string
 }
 
 func init() {
@@ -20,6 +26,7 @@ func init() {
 }
 
 func setupConfig() {
+	c.Environment = os.Getenv("ENV")
 	c.StaticRoot = os.Getenv("STATIC_ROOT")
 	c.ViewRoot = os.Getenv("VIEW_ROOT")
 }
