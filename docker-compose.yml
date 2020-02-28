@@ -9,7 +9,7 @@ services:
         source: ./webapp
         target: /app
     environment:
-      - ENV =dev
+      - ENV=dev
       - STATIC_ROOT=../static
       - VIEW_ROOT=../views
     command: ["go", "run", "."]

@@ -3,7 +3,7 @@ package routes
 import (
 	"net/http"
 
-	"github.com/silvercloudtraining/webapp/wc"
+	"github.com/mgsf/RapidResponseSystem/wc"
 )
 
 // Register connects all of the Handlers in the application

@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"regexp"
 
-	"github.com/silvercloudtraining/webapp/view"
+	"github.com/mgsf/RapidResponseSystem/view"
 )
 
 type httpHandler struct {

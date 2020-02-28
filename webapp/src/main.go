@@ -3,10 +3,9 @@ package main
 import (
 	"log"
 	"net/http"
-	"time"
 
+	"github.com/mgsf/RapidResponseSystem/routes"
 	"github.com/mgsf/RapidResponseSystem/view"
-	"github.com/mgsf/RapidResponseSystem/wc"
 )
 
 func main() {

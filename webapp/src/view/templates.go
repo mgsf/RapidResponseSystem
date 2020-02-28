@@ -12,7 +12,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/silvercloudtraining/webapp/config"
+	"github.com/mgsf/RapidResponseSystem/config"
 )
 
 var (
