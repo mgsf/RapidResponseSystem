@@ -56,3 +56,15 @@ func (wc Workcenter) StatusDescription() string {
 func (wc Workcenter) EscalationLevelDescription() string {
 	return escalationLevels[wc.EscalationLevel]
 }
+
+// GetWorkcenter retrieves the workcenter with the provided ID.
+func GetWorkcenter(id int) (Workcenter, error) {
+	return Workcenter{
+		ID:              id,
+		Name:            "Assembly Line 1",
+		CurrentProduct:  "Widgets",
+		Status:          0,
+		EscalationLevel: 0,
+		StatusSetAt:     time.Now(),
+	}, nil
+}
