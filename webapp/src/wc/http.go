@@ -4,6 +4,7 @@ import (
 	"log"
 	"net/http"
 	"regexp"
+	"strconv"
 
 	"github.com/mgsf/RapidResponseSystem/view"
 )
@@ -21,8 +22,17 @@ func NewViewHandler() http.Handler {
 }
 
 func (h *httpHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	// hardcode id for now
-	id := 1
+	matches := h.urlPattern.FindStringSubmatch(r.URL.Path)
+	if len(matches) == 0 {
+		http.NotFound(w, r)
+		return
+	}
+	id, err := strconv.Atoi(matches[1])
+	if err != nil {
+		log.Printf("failed to convert id %q to integer: %v", matches[1], err)
+		http.NotFound(w, r)
+		return
+	}
 
 	t, err := view.Get("workcenter")
 	if err != nil {
